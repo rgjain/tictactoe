@@ -1,13 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: arial;
+	font-size: 13px;
+}
+@font-face {
+    font-family: 'kaushan_scriptregular';
+    src: url('../fonts/kaushanscript-regular.eot');
+    src: url('../fonts/kaushanscript-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/kaushanscript-regular.woff2') format('woff2'),
+         url('../fonts/kaushanscript-regular.woff') format('woff'),
+         url('../fonts/kaushanscript-regular.ttf') format('truetype'),
+         url('../fonts/kaushanscript-regular.svg#kaushan_scriptregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 .wrapper{
-	margin:0px auto;
+	margin:20px auto;
 	text-align:center;
-	background:#ccc;
-	border:1px solid #ddd;
+	background:#fff;
 	padding:25px;
 	width:414px;
+	border-radius: 5px;
 }
 .action-bar{
 	margin-bottom:10px;
+	display: table;
+	width: 100%;
+}
+.col-left, .col-right {
+	display: table-cell;
+	text-align: left;
+}
+.col-right {
+	text-align: right;
+}
+.action-bar button {
+	padding: 5px;
+	border-radius: 2px;
+	background: linear-gradient(#fff, #ddd);
+	border: 1px solid #ccc;
 }
 .status-bar{
 	margin-top:10px;
@@ -17,20 +51,20 @@
 	border:1px dashed black;
 }
 .board{
-	box-shadow(0 3px 7px rgba(0,0,0,1));
-	border: 1px solid #999;
-	margin:0px auto;
+	box-shadow: 0 0 30px #777;
+	margin:30px auto;
+	font-family: "kaushan_scriptregular";
+	border-radius: 5px;
 }
 .row{
 	display:table-row;
 }
 .col{
-	width:136px;
-	height:136px;
+	width:138px;
+	height:138px;
 	display:table-cell;
-	background-color:#ccc;
-	border-bottom:1px solid #999;
-	border-right:1px solid #999;
+	border-bottom:1px solid #ccc;
+	border-right:1px solid #ccc;
 	cursor:pointer;
 }
 .col .symbol{

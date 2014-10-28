@@ -1,7 +1,13 @@
 <div class="wrapper">
+	<h1>Tic Tac Toe</h1>
 	<div class="action-bar">
-		<input type="checkbox" value="{{computer_first}}" ng-model="computer_first" ng-checked="computer_first" />Computer First
-		<button id="start-game" ng-click="startGame()">Start new game</button>
+		<div class="col-left">
+			<button id="start-game" ng-click="startGame()">Start new game</button>
+		</div>
+		<div class="col-right">
+			<input type="checkbox" value="{{computer_first}}" ng-model="computer_first" ng-checked="computer_first" />
+			<label>Computer First</label>
+		</div>
 	</div>
 
 	<div class="tictactoe">
