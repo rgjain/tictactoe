@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" >
 	<h1>Tic Tac Toe</h1>
 	<div class="action-bar">
 		<div class="col-left">
@@ -21,4 +21,19 @@
 	</div>
 
 	<div class="status-bar" ng-show="status_message.length > 0">{{status_message}}</div>
+
+	<div class="game-stats ">
+		<div class="cell">
+			<p>Computer Wins</p>
+			<strong>{{computer_win_count}}</strong>
+		</div>
+		<div class="cell">
+			<p>Human Wins</p>
+			<strong>{{human_win_count}}</strong>
+		</div>
+		<div class="cell">
+			<p>Ties</p>
+			<strong>{{tie_count}}</strong>
+		</div>
+	</div>
 </div>

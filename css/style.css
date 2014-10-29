@@ -83,3 +83,15 @@ body {
 	border-bottom:0;
 }
 
+.game-stats {
+	display: table;
+	width: 100%;
+}
+.game-stats .cell {
+	display: table-cell;
+	width: 33%;
+}
+.game-stats p, .game-stats strong {
+	display: block;
+	padding: 5px 0;
+}

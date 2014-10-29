@@ -5,6 +5,13 @@ function GameController($scope, game, grid_size) {
     $scope.status_message = "";
     $scope.computer_first = false;
     $scope.game_over = false;
+    $scope.computer_win_count = 0;
+    $scope.human_win_count = 0;
+    $scope.tie_count = 0;
+    $scope.keyCode = "";
+    $scope.keyPressed = function (e) {
+        console.log(e.which);
+    };
 
     $scope.startGame = function(){
         $scope.status_message = "";
@@ -22,17 +29,29 @@ function GameController($scope, game, grid_size) {
 
             // check winner
             if(game.winner) {
-                if(game.winner === game.board.X) $scope.status_message = "you lose!";
-                if(game.winner === game.board.O) $scope.status_message = "you win!";
+                if(game.winner === game.board.X) {
+                    $scope.status_message = "you lose!";
+                    $scope.computer_win_count++;
+                }
+                if(game.winner === game.board.O) {
+                    $scope.status_message = "you win!";
+                    $scope.human_win_count++;
+                }
                 $scope.game_over = true;
             }
 
             // check tie
             if(game.tie){
                 $scope.status_message = "tie! no one wins!";
+                $scope.tie_count++;
                 $scope.game_over = true;
             }
         }
+    }
+
+    $scope.makeMoveUsingKeyBoard = function ($event) {
+        keyEvent = (window.event ? keyEvent.keyCode : keyEvent.which) + ")";
+console.log(keyEvent);
     }
 
     $scope.getSquareSymbol = function(col, row){
