@@ -9,6 +9,9 @@
 			<button id="start-game" ng-click="startGame()">New game</button>
 		</div>
 		<div class="col-right">
+			<button id="reset-scores" ng-click="resetScores()">Reset Scores</button>
+		</div>
+		<div class="col-right">
 			<input type="checkbox" value="{{computer_first}}" ng-model="computer_first" ng-checked="computer_first" />
 			<label>Computer First</label>
 		</div>
@@ -32,7 +35,7 @@
 			<strong>{{computer_win_count}}</strong>
 		</div>
 		<div class="cell">
-			<p>Human Wins</p>
+			<p>{{human_player_name}} Wins</p>
 			<strong>{{human_win_count}}</strong>
 		</div>
 		<div class="cell">

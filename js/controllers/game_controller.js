@@ -18,6 +18,12 @@ function GameController($scope, game, grid_size) {
         $scope.status_message = "game started";
     }
 
+    $scope.resetScores = function () {
+        $scope.computer_win_count = 0;
+        $scope.human_win_count = 0;
+        $scope.tie_count = 0;
+    }
+
     $scope.makeMove = function(col, row){
         var boardIndex, symbol, winner;
         boardIndex = (row * grid_size) + col;
@@ -28,11 +34,11 @@ function GameController($scope, game, grid_size) {
             // check winner
             if(game.winner) {
                 if(game.winner === game.board.X) {
-                    $scope.status_message = "you lose!";
+                    $scope.status_message = $scope.human_player_name + ", you lose!";
                     $scope.computer_win_count++;
                 }
                 if(game.winner === game.board.O) {
-                    $scope.status_message = "you win!";
+                    $scope.status_message = $scope.human_player_name + " wins this game!";
                     $scope.human_win_count++;
                 }
                 $scope.game_over = true;
@@ -40,16 +46,11 @@ function GameController($scope, game, grid_size) {
 
             // check tie
             if(game.tie){
-                $scope.status_message = "tie! no one wins!";
+                $scope.status_message = $scope.human_player_name + "It's a tie! no one wins!";
                 $scope.tie_count++;
                 $scope.game_over = true;
             }
         }
-    }
-
-    $scope.makeMoveUsingKeyBoard = function ($event) {
-        keyEvent = (window.event ? keyEvent.keyCode : keyEvent.which) + ")";
-console.log(keyEvent);
     }
 
     $scope.getSquareSymbol = function(col, row){
