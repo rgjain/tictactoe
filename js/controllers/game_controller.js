@@ -5,18 +5,16 @@ function GameController($scope, game, grid_size) {
     $scope.status_message = "";
     $scope.computer_first = false;
     $scope.game_over = false;
+    $scope.human_player_name = "Human";
     $scope.computer_win_count = 0;
     $scope.human_win_count = 0;
     $scope.tie_count = 0;
-    $scope.keyCode = "";
-    $scope.keyPressed = function (e) {
-        console.log(e.which);
-    };
 
     $scope.startGame = function(){
         $scope.status_message = "";
         $scope.game_over = false;
     	game.start($scope.grid.length, $scope.computer_first);
+        console.log($scope.computer_first);
         $scope.status_message = "game started";
     }
 

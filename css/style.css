@@ -37,6 +37,14 @@ body {
 .col-right {
 	text-align: right;
 }
+.player-info {
+	margin: 20px 0;
+}
+.player-info input {
+	border-radius: 3px;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
 .action-bar button {
 	padding: 5px;
 	border-radius: 2px;
